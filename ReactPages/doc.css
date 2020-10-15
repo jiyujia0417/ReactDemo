@@ -1,0 +1,8 @@
+.doc .content{
+    width: 200px;
+}
+.doc ol{
+    position: fixed;
+    right:100px;
+    padding-left: 50px;
+}
