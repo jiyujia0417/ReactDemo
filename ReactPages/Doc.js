@@ -1,15 +1,9 @@
 import React from 'react'
-import { HashRouter as Router, Redirect, Route, NavLink, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Redirect, NavLink } from 'react-router-dom';
 import RouteWithSubRoutes from '../ReactComponents/RouteWithSubRoutes'
 import './doc.css'
 
-// const DocContent = (props) => {
-//     // console.log(props)
-//     return <h2>
-//         {props.match.params.type}
-//     </h2>
-// }
-const Doc = ({routes}) => {
+const Doc = ({ routes }) => {
     return <div className='doc'>
         <Router>
             <ol>
@@ -20,12 +14,12 @@ const Doc = ({routes}) => {
             </ol>
 
             <div className='content'>
-                <Redirect from='/doc' to='/doc/core'/>
+                <Redirect from='/doc' to='/doc/core' />
                 {routes.map((route, i) => (
-                    <RouteWithSubRoutes key={i} {...route}/>
+                    <RouteWithSubRoutes key={i} {...route} />
                 ))}
                 {/* <Route path='/doc/:type' component={DocContent} /> */}
-                
+
             </div>
         </Router>
     </div>

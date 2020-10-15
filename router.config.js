@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Blog from './ReactPages/Blog'
 import Comm from './ReactPages/Comm'
 import Doc from './ReactPages/Doc'
@@ -31,8 +31,7 @@ const routes = [
     {
         path: '/doc',
         component: Doc,
-        // pri: true,
-        // children: true,
+        pri: true,
         routes: [
             {
                 path: '/doc/core',
@@ -54,7 +53,8 @@ const routes = [
     },
     {
         path: '/tuto',
-        component: Tuto
+        component: Tuto,
+        pri:true
     },
     {
         path: '/blog',
@@ -64,6 +64,10 @@ const routes = [
         path: '/comm',
         component: Comm
     },
+    {
+        path:'/login',
+        component:Login
+    }
 
 ];
 

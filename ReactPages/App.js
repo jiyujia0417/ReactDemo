@@ -1,15 +1,7 @@
 import React from 'react'
-import { HashRouter as Router, Redirect, Route, NavLink, Switch } from 'react-router-dom'
-
+import {BrowserRouter as Router,Switch} from 'react-router-dom';
 import Header from './Header'
-import Home from './Home'
-import Doc from './Doc'
-import Tuto from './Tuto'
-import Blog from './Blog'
-import Comm from './Comm'
 import routes from '../router.config'
-import PrivateRoute from '../ReactComponents/PrivateRoute'
-import Login from './Login'
 import RouteWithSubRoutes from '../ReactComponents/RouteWithSubRoutes'
 
 const App = () => {
