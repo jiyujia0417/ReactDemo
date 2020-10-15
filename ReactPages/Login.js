@@ -1,10 +1,11 @@
 //Login.js
 
-import React, { Component } from 'react'
+import React from 'react'
 
 const Login = (props) => {
+    console.log(props);
     const login = () => {
-        localStorage.setItem('userinfo', 'tom')
+        localStorage.setItem('userinfo', 'lili')
         props.history.replace(props.location.state)
     }
     return (

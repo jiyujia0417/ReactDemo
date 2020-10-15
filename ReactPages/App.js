@@ -8,6 +8,9 @@ import Tuto from './Tuto'
 import Blog from './Blog'
 import Comm from './Comm'
 import routes from '../router.config'
+import PrivateRoute from '../ReactComponents/PrivateRoute'
+import Login from './Login'
+
 const App = () => {
     return <Router>
         {/* 引入头部导航栏 */}
@@ -15,10 +18,11 @@ const App = () => {
 
         <Switch>
             <Route exact path='/' component={Home} />
-            <Route path='/doc' component={Doc} />
-            <Route path='/tuto' component={Tuto} />
+            <PrivateRoute path='/doc' component={Doc} />
+            <PrivateRoute path='/tuto' component={Tuto} />
             <Route path='/blog' component={Blog} />
             <Route path='/comm' component={Comm} />
+            <Route path='/login' component={Login} />
         </Switch>
 
     </Router>
