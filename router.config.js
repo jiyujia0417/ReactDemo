@@ -7,19 +7,19 @@ import Home from './ReactPages/Home'
 import Login from './ReactPages/Login'
 
 const Core = () =>{
-    return <div>Core</div>
+    return <h2>Core</h2>
 }
 
 const Hooks = () =>{
-    return <div>Hooks</div>
+    return <h2>Hooks</h2>
 }
 
 const Api = () =>{
-    return <div>Api</div>
+    return <h2>Api</h2>
 }
 
 const Guide = () =>{
-    return <div>Guide</div>
+    return <h2>Guide</h2>
 }
 
 const routes = [
@@ -38,15 +38,15 @@ const routes = [
                 component: Core
             },
             {
-                path: '/doc/guide',
+                path: '/doc/api',
                 component: Api
             },
             {
-                path: '/doc/api',
+                path: '/doc/hooks',
                 component: Hooks
             },
             {
-                path: '/doc/hooks',
+                path: '/doc/guide',
                 component: Guide
             }
         ]
@@ -70,7 +70,5 @@ const routes = [
     }
 
 ];
-
-
 
 export default routes

@@ -1,11 +1,13 @@
+// RouteWithSubRoutes.js
+
 import React from 'react'
 import PrivateRoute from './PrivateRoute'
-import {Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 const RouteWithSubRoutes = (route) => {
     console.log(route)
-    if(route.pri === true){
-        return <PrivateRoute path={route.path} {...route}/>
+    if (route.pri === true) {
+        return <PrivateRoute path={route.path} {...route} />
     }
 
     return (
