@@ -1,3 +1,5 @@
+// router.config.js
+
 import React from 'react'
 import Blog from './ReactPages/Blog'
 import Comm from './ReactPages/Comm'

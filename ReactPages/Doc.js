@@ -29,6 +29,4 @@ const Doc = ({ routes }) => {
     </div>
 }
 
-
-
 export default Doc
