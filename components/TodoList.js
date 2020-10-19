@@ -22,12 +22,17 @@ export default class TodoList extends Component {
         }
     }
 
-    componentDidUpdate() {
-        //每一次更新都缓存一次值
-        localStorage.setItem(
-            'todos',
-            JSON.stringify(this.state.todos)
-        )
+    componentDidUpdate(preProps, preState) {
+        //判断现在状态的todos和之前渲染的todos是否相同，如果相同就补三更新。如果不同才缓存本地
+        //实现输入框输入的时候不更新，只有点击添加的时候本地才进行缓存
+        if (preState.todos !== this.state.todos) {
+            console.log(123);
+            //每一次更新都缓存一次值
+            localStorage.setItem(
+                'todos',
+                JSON.stringify(this.state.todos)
+            )
+        }
     }
 
     handleChange = (e) => {
@@ -69,38 +74,11 @@ export default class TodoList extends Component {
         this.setState({ todos: newTodos });
     }
 
-    renderTodo = (done) => {
-        return this.state.todos.map((item, index) => {
-            if (item.done == done) {
-                return (
-                    <li>
-                        <input
-                            onClick={() => this.toggle(index)}
-                            checked={done}
-                            //使用checked来选择是否勾选对勾，为真的勾上，为假的不勾
-                            type="checkbox"
-                            readOnly={true}
-                        />
-                        <span dangerouslySetInnerHTML={{ __html: item.title }}></span>
-                        <button onClick={() => this.delTodo(index)}>del</button>
-                    </li>
-                )
-            }
-        })
-    }
-
     render() {
-        //解构
-        const { inpValue, todos } = this.state;
-
-        //写两个数组以done的值来区分，done为false的数组处于“doing now”列；done为true的数组处于“already done”列
-        let arrFalse = todos.filter(item => !item.done);
-        let arrTrue = todos.filter(item => item.done);
-
         return <div>
             <label htmlFor="inp"><h2>TodoList </h2></label>
-            <Input inpValue={inpValue} addTodo={this.addTodo} handleChange={this.handleChange} />
-            <List arrFalse={arrFalse} arrTrue={arrTrue} renderTodo={this.renderTodo} todos={todos} delTodo={this.delTodo} toggle={this.toggle} />
+            <Input inpValue={this.state.inpValue} addTodo={this.addTodo} handleChange={this.handleChange} />
+            <List todos={this.state.todos} delTodo={this.delTodo} toggle={this.toggle} />
         </div>
     }
 }
