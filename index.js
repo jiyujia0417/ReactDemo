@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './ReactPages/App';
-import TodoList from './components/TodoList';
+import App from './ReduxPages/App'
+// import App from './ReactPages/App';
+// import TodoList from './components/TodoList';
 
 ReactDOM.render(
-    <TodoList />,
+    <App />,
     document.getElementById('root')
 );
 // let url = 'https://www.fastmock.site/mock/9e4bbf9e35ad15942010865690c87ac6/api/login';
