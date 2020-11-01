@@ -9,20 +9,14 @@ const Todos = (props) => {
                 props.mydata.map((item, i) =>
                     <li key={i}>
                         {item}
+                        <button
+                            onClick={() => props.dispatch({
+                                type: 'DEL_TODO',
+                                value: '10000',
+                                index:i
+                            })}>del</button>
                     </li>)
             }
-            <button
-                onClick={() => props.dispatch({
-                    type: 'DEL_TODO',
-                    value: '10000'
-                })}>del</button>
-            <button
-                onClick={() => props.dispatch({
-                    type: 'ADD_TODO',
-                    value: '10000'
-                })}>add</button>
-
-
         </div>
     )
 }
