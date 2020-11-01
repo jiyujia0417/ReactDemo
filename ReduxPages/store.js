@@ -1,5 +1,5 @@
 import { createStore } from 'redux'
-import todolist from './reducers';
+import todolist from './todosReducers';
 
 const store = createStore(todolist);
 
